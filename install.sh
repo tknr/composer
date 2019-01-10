@@ -6,6 +6,13 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece38
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
-
 chmod +x composer.phar
 ln -s `pwd`/composer.phar /usr/local/bin/composer
+
+## 光遅い問題に対応して Composer を100倍速くする - Qiita https://qiita.com/bezeklik/items/f9bc7afc229b5476e822
+composer config -g repos.packagist composer https://packagist.jp
+composer global require hirak/prestissimo
+
+
+
+
